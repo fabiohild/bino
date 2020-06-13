@@ -8,4 +8,7 @@ Meteor.methods({
                 timestamp: new Date()
             })
     },
+    'setLocation' (loc) {
+        console.log(loc)
+    },
   });

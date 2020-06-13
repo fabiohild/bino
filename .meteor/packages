@@ -28,3 +28,4 @@ accounts-password
 accounts-ui
 iron:router
 session
+force-ssl
