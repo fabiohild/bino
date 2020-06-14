@@ -75,6 +75,9 @@ const closeVotings = async function () {
 
 const sendRewards = function (prize, arrayReceivers) {
   arrayReceivers.forEach(receiver => {
+    if (receiver.constructor === Array)
+      receiver = receiver[0]
+    console.log(receiver)
     Meteor.users.update(receiver, {
       $inc: {
         "profile.points": prize / arrayReceivers.length

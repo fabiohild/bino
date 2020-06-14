@@ -21,13 +21,18 @@
 
       <table style="width: 100%;">
         <tr>
-          <td style='padding: 1px;'><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-filter" aria-hidden="true"></i></button></td>
-          <td style='padding: 1px;'><button type="button" class="btn btn-warning btn-lg btn-block"  data-toggle="modal"
+          <td style='padding: 3px; width: 50px;'><button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+            data-target="#filterModal"><i class="fa fa-filter" aria-hidden="true"></i></button></td>
+          <td style='padding: 3px;'><button type="button" class="btn btn-warning btn-lg btn-block"  data-toggle="modal"
             data-target="#alertModal"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Novo Alerta</button></td>
+            <td style='padding: 3px; width: 100px;'><button type="button" class="btn btn-danger btn-lg float-right" data-toggle="modal"
+              data-target="#emergencyModal"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Emergência</button></td>
         </tr>
       </table>
       
     </nav>
   </footer>
   {{>alertModal}}
+  {{>filterModal}}
+  {{>emergencyModal}}
 </template>
