@@ -6,6 +6,7 @@ Template.alert.helpers({
       return "Localização indisponível"
     },
     getMoment() {
+        console.log(this)
         moment.locale('pt-br');
         return moment(this.timestamp).fromNow()
     }

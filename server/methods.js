@@ -26,7 +26,9 @@ Meteor.methods({
 const insertAlert = async function (coords, postText) {
     const geolocation = await getAddress(coords[0], coords[1])
 
-    username = Meteor.users.findOne(Meteor.userId()).emails[0].address
+
+
+    username = Meteor.users.findOne(Meteor.userId()).username
     if (username)
         Alerts.insert({
             userName: username,
