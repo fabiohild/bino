@@ -29,6 +29,5 @@ accounts-ui
 iron:router
 session
 force-ssl
-jaymc:google-reverse-geocode
 momentjs:moment
 mrt:moment-timezone

@@ -11,7 +11,6 @@ Template.alert.helpers({
     return moment(this.timestamp).from(Session.get("currentTime"), true)
   },
   categoryTextColor() {
-    console.log(this.category)
     if (this.category == "transito")
       return "text-info fa-car"
     else if (this.category == "suspeitas")
