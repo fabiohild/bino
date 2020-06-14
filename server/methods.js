@@ -7,9 +7,7 @@ Meteor.methods({
         insertAlert(coords, postText)
     },
     'setLocation'(longitude, latitude, precision) {
-        console.log(Meteor.userId(), longitude, latitude, precision)
-
-
+        // console.log(Meteor.userId(), longitude, latitude, precision)
         Meteor.users.update(Meteor.userId(), {
             $set: {
                 "profile.lastLoc": {
