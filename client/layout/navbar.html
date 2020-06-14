@@ -2,6 +2,14 @@
 
     <nav class="navbar navbar-light bg-light fixed-top">
         <div class="container">
+
+            {{#if currentUser }}
+            <span>
+                <a href="/feed"><button><i class="fa fa-bars" aria-hidden="true"></i></button></a>
+                <a href="/feed"><button><i class="fa fa-map-o" aria-hidden="true"></i></button></a>
+            </span>
+            {{/if}}
+
             <a class="navbar-brand" href="/"><img height="30" src="img/logo.png" alt=""> Bino</a>
             {{> loginButtons}}
             <!-- here -->
