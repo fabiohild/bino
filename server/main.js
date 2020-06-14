@@ -63,7 +63,7 @@ const closeVotings = async function () {
     })
 
     // won?
-    if (alert.voting.like.length > alert.voting.dislike.length) { // valid
+    if (alert.voting.like.length >= alert.voting.dislike.length) { // valid
       sendRewards(totalPrize / 2, [alert.userId])
       sendRewards(totalPrize / 2, alert.voting.like)
     } else { // lost
