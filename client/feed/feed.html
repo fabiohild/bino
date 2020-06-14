@@ -18,10 +18,14 @@
   <footer class="fixed-bottom">
     <nav class="navbar navbar-expand-sm bg-light">
 
-      <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-filter" aria-hidden="true"></i></button>
-      &nbsp;&nbsp;
-      <button type="button" class="btn btn-warning btn-lg float-right" style="min-width: 400px;" data-toggle="modal"
-        data-target="#alertModal"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Novo Alerta</button>
+      <table style="width: 100%;">
+        <tr>
+          <td style='padding: 1px;'><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-filter" aria-hidden="true"></i></button></td>
+          <td style='padding: 1px;'><button type="button" class="btn btn-warning btn-lg btn-block"  data-toggle="modal"
+            data-target="#alertModal"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Novo Alerta</button></td>
+        </tr>
+      </table>
+      
     </nav>
   </footer>
   {{>alertModal}}

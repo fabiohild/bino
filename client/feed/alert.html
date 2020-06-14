@@ -1,24 +1,34 @@
 <template name="alert">
-    <div class="container">
-        <div class="card flex-row flex-wrap">
-            <div class="card-header border-0">
-                <br>
-                <i class="fa fa-exclamation-triangle fa-5x fa-fw text-primary"></i>
-            </div>
-            <div class="card-block px-2" style="padding-bottom: 5px; min-width: 65%;">
-                <br>
-                <h4 class="card-title">{{userName}}</h4>
-                <p class="card-text">{{postText}}</p>
-                <p><small><i class="fa fa-map-marker" aria-hidden="true"></i> Arnaldo Silveira, 108</small></p>
-                <span class="float-right">
-                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
-                    <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a>
-                </span>
-                <br>
-            </div>
+    
 
+        <div class="card card-success">
+            <table>
+                <tr>
+                    <td style="width: 110px; padding: 15px;"><i class="fa fa-exclamation-triangle fa-5x fa-fw text-primary"></i></td>
+                    <td style='padding: 15px;'>
+                        <h4 class="card-title">{{userName}}</h4>
+                        <p class="card-text">{{postText}}</p>
+                        <p><small><i class="fa fa-map-marker" aria-hidden="true"></i> {{getAddress}}</small></p>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <small class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i> {{getMoment}}</small>
+                                </td>
+                                <td>
+                                    <span class="float-right">
+                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-thumbs-up"
+                                                aria-hidden="true"></i></a>
+                                        <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"
+                                                aria-hidden="true"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
         </div>
         <br>
-
-    </div>
+    
 </template>
