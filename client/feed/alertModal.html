@@ -1,26 +1,65 @@
 <template name="alertModal">
-    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Novo Alerta</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="post">Descrição:</label>
-                    <textarea class="form-control" rows="5" id="post"></textarea>
-                  </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
-              <button type="button" class="btn btn-secondary"><i class="fa fa-camera-retro" aria-hidden="true"></i></button>
-              <button type="button" class="btn btn-secondary"><i class="fa fa-microphone" aria-hidden="true"></i></button>
-              <button type="button" id="sendAlert" class="btn btn-warning">Enviar</button>
-            </div>
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            Novo Alerta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- category -->
+          <!-- Default unchecked -->
+          <!-- Default checked -->
+          <h5>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="transito" name="defaultExampleRadios" checked>
+            <label class="custom-control-label" for="transito"><i class="fa fa-car text-info" aria-hidden="true"></i> Trânsito</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="suspeitas" name="defaultExampleRadios">
+            <label class="custom-control-label" for="suspeitas"><i class="fa fa-user-secret " aria-hidden="true"></i> Atividades Suspeitas</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="servicos" name="defaultExampleRadios">
+            <label class="custom-control-label" for="servicos"><i class="fa fa-wrench text-success" aria-hidden="true"></i> Busca por Serviços</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="acidentes" name="defaultExampleRadios">
+            <label class="custom-control-label" for="acidentes"><i class="fa fa-tachometer text-warning" aria-hidden="true"></i> Acidentes na Pista</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="seguranca" name="defaultExampleRadios">
+            <label class="custom-control-label" for="seguranca"><i class="fa fa-hand-paper-o text-danger" aria-hidden="true"></i> Segurança</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="condicoes" name="defaultExampleRadios">
+            <label class="custom-control-label" for="condicoes"><i class="fa fa-road text-primary" aria-hidden="true"></i> Condições da Pista</label>
+          </div>
+        </h5>
+          
+
+          <div class="form-group">
+            <label for="post">Descrição:</label>
+            <textarea class="form-control" rows="5" id="post"></textarea>
           </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"
+              aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-secondary"><i class="fa fa-camera-retro" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-secondary"><i class="fa fa-microphone" aria-hidden="true"></i></button>
+          <button type="button" id="sendAlert" class="btn btn-warning">Enviar</button>
+        </div>
       </div>
+    </div>
+  </div>
 </template>
