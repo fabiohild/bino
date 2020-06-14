@@ -4,10 +4,17 @@ import {
 
 Meteor.startup(() => {
   // code to run on server at startup
-  // cleanup
 
+  // cleanup
   // Meteor.users.remove({})
   // Alerts.remove({})
+
+  // timeout para fechamento das votações
+  setInterval(function () {
+
+    closeVotings()
+
+  }, 3000);
 
   Meteor.users.update({
     "profile.points": {
@@ -31,3 +38,47 @@ Accounts.onCreateUser(function (options, user) {
   user.profile = profile
   return user;
 });
+
+const closeVotings = async function () {
+  console.log("pending votes");
+
+  pendingAlerts = Alerts.find({
+    "timestamp": {
+      $lt: new Date(Date.now() - 31 * 60 * 1000)
+    },
+    "voting.alertPrize": {
+      $gt: 0
+    }
+  }).fetch()
+
+  pendingAlerts.forEach(alert => {
+
+    let totalPrize = alert.voting.alertPrize + alert.voting.votersBalance
+    // removing balance from alert
+    Alerts.update(alert._id, {
+      $set: {
+        "voting.alertPrize": 0,
+        "voting.votersBalance": 0,
+      }
+    })
+
+    // won?
+    if (alert.voting.like.length > alert.voting.dislike.length) { // valid
+      sendRewards(totalPrize / 2, [alert.userId])
+      sendRewards(totalPrize / 2, [alert.voting.like])
+    } else { // lost
+      sendRewards(totalPrize, [alert.voting.dislike])
+    }
+  });
+
+}
+
+const sendRewards = function (prize, arrayReceivers) {
+  arrayReceivers.forEach(receiver => {
+    Meteor.users.update(receiver, {
+      $inc: {
+        "profile.points": prize / arrayReceivers.length
+      }
+    })
+  });
+}

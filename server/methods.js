@@ -70,6 +70,7 @@ const insertAlert = async function (coords, postText) {
     if (username)
         Alerts.insert({
             userName: username,
+            userId: Meteor.userId(),
             voting: {
                 alertPrize: 100,
                 voters: [],
