@@ -1,0 +1,9 @@
+<template name="voting">
+    {{#if isOpen}}
+    <small class="text-muted">{{#if hasVoted}} Obrigado! {{else}} Vote! {{/if}} ({{getMoment}} restantes)</small>
+    <a href="#" id="like" class="btn btn-primary btn-sm {{disableVoting}}"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+    <a href="#" id="dislike" class="btn btn-danger btn-sm {{disableVoting}}" ><i class="fa fa-thumbs-down" aria-hidden="true"></i></a>
+    {{else}}
+    <small class="text-muted"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{positiveVotes}} &nbsp;<i class="fa fa-thumbs-down" aria-hidden="true"></i> {{negativeVotes}}</small>
+    {{/if}}
+</template>

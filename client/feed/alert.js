@@ -1,3 +1,4 @@
+
 Template.alert.helpers({
     getAddress() {
     if (this.geolocation)
@@ -6,8 +7,7 @@ Template.alert.helpers({
       return "Localização indisponível"
     },
     getMoment() {
-        console.log(this)
         moment.locale('pt-br');
-        return moment(this.timestamp).fromNow()
+        return moment(this.timestamp).from(Session.get("currentTime"), true)
     }
   });
