@@ -65,9 +65,9 @@ const closeVotings = async function () {
     // won?
     if (alert.voting.like.length > alert.voting.dislike.length) { // valid
       sendRewards(totalPrize / 2, [alert.userId])
-      sendRewards(totalPrize / 2, [alert.voting.like])
+      sendRewards(totalPrize / 2, alert.voting.like)
     } else { // lost
-      sendRewards(totalPrize, [alert.voting.dislike])
+      sendRewards(totalPrize, alert.voting.dislike)
     }
   });
 
@@ -75,8 +75,6 @@ const closeVotings = async function () {
 
 const sendRewards = function (prize, arrayReceivers) {
   arrayReceivers.forEach(receiver => {
-    if (receiver.constructor === Array)
-      receiver = receiver[0]
     console.log(receiver)
     Meteor.users.update(receiver, {
       $inc: {
