@@ -3,8 +3,8 @@ import {
 } from "./geoCoder"
 
 Meteor.methods({
-    'newAlert'(coords, postText) {
-        insertAlert(coords, postText)
+    'newAlert'(coords, postText, category) {
+        insertAlert(coords, postText, category)
     },
     'vote'(alertId, isLike) {
         // removing one point from user
@@ -61,7 +61,7 @@ Meteor.methods({
     },
 });
 
-const insertAlert = async function (coords, postText) {
+const insertAlert = async function (coords, postText, category) {
     const geolocation = await getAddress(coords[0], coords[1])
 
 
@@ -71,6 +71,7 @@ const insertAlert = async function (coords, postText) {
         Alerts.insert({
             userName: username,
             userId: Meteor.userId(),
+            category: category,
             voting: {
                 alertPrize: 100,
                 voters: [],

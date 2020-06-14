@@ -1,13 +1,13 @@
 <template name="alert">
 
-    <div class="card card-success">
+    <div class="card bg-light">
         <table>
             <tr>
                 <td style="width: 110px; padding: 15px;"><i
-                        class="fa fa-exclamation-triangle fa-5x fa-fw text-primary"></i></td>
+                        class="fa fa-5x fa-fw {{categoryTextColor}}"></i></td>
                 <td style='padding: 15px;'>
-                    <h4 class="card-title">{{userName}}</h4>
-                    <p class="card-text">{{postText}}</p>
+                    <h4 class="card-title">{{postText}}</h4>
+                    <p class="card-text">@{{userName}}</p>
                     <p><small><i class="fa fa-map-marker" aria-hidden="true"></i> {{getAddress}}</small></p>
                     <table style="width: 100%;">
                         <tr>
