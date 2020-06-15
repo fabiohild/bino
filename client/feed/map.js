@@ -17,7 +17,7 @@ function getEmoji(category) {
         return "🤚"
     else if (category == "condicoes")
         return "🌧️"
-    return "😃"
+    return "⚠"
 }
 
 function initMap(userCoords, alerts) {
