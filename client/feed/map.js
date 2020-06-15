@@ -1,23 +1,23 @@
 Template.mapView.onRendered(function () {
-    
+
     initMap(Meteor.user().profile.lastLoc.coordinates, Alerts.find().fetch())
 });
 
 function getEmoji(category) {
     console.log(category)
     if (category == "transito")
-    return "🚛"
-  else if (category == "suspeitas")
-    return "🕵️"
-  else if (category == "servicos")
-    return "🔧 "
-  else if (category == "acidentes")
-    return "🚨"
-  else if (category == "seguranca")
-    return "🤚"
-  else if (category == "condicoes")
-    return "🌧️"
-  return "😃"
+        return "🚛"
+    else if (category == "suspeitas")
+        return "🕵️"
+    else if (category == "servicos")
+        return "🔧 "
+    else if (category == "acidentes")
+        return "🚨"
+    else if (category == "seguranca")
+        return "🤚"
+    else if (category == "condicoes")
+        return "🌧️"
+    return "😃"
 }
 
 function initMap(userCoords, alerts) {
@@ -47,7 +47,7 @@ function initMap(userCoords, alerts) {
             },
             map: map,
             label: getEmoji(alert.category),
-            title: alert.postText
+            title: alert.postText,
         });
     });
 }
