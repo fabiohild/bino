@@ -11,7 +11,7 @@
             {{/if}}
 
             <a class="navbar-brand" href="/"><img height="30" src="img/logo.png" alt=""> Bino</a>
-            <span>{{> loginButtons}}  &nbsp;&nbsp;<i class="fa fa-star text-warning" aria-hidden="true"></i><b> {{myBalance}}</b></span>
+            <span>{{> loginButtons}}  &nbsp;&nbsp; {{#if currentUser}}<i class="fa fa-star text-warning" aria-hidden="true"></i>{{/if}}<b> {{myBalance}}</b></span>
             <!-- here -->
         </div>
 
