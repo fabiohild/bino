@@ -1,25 +1,68 @@
 <template name="filterModal">
-    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-filter" aria-hidden="true"></i>
-              Filtro</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-filter" aria-hidden="true"></i>
+            Filtro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Estradas</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Rod. dos Imigrantes</option>
+              <option>Rod. Anchieta</option>
+              <option>Rod. Cônego Domênico Randoni</option>
+            </select>
           </div>
-          <div class="modal-body">
-            
-            
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Estado</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO"</option>
+            </select>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"
-                aria-hidden="true"></i></button>
-            <button type="button" id="sendAlert" class="btn btn-primary">Atualizar</button>
+          <div class="form-group">
+            <label for="raio">Raio (km)</label>
+            <input id="raio" type="number" class="form-control" value="100">
           </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"
+              aria-hidden="true"></i></button>
+          <button type="button" id="sendAlert" class="btn btn-primary" data-dismiss="modal">Atualizar</button>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
