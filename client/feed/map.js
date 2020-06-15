@@ -1,12 +1,26 @@
 Template.mapView.onRendered(function () {
-    let alertCoords = []
-    Alerts.find().fetch().forEach(alert => {
-        alertCoords.push(alert.location.coordinates)
-    });
-    initMap(Meteor.user().profile.lastLoc.coordinates, alertCoords)
+    
+    initMap(Meteor.user().profile.lastLoc.coordinates, Alerts.find().fetch())
 });
 
-function initMap(userCoords, alertCoords) {
+function getEmoji(category) {
+    console.log(category)
+    if (category == "transito")
+    return "🚛"
+  else if (category == "suspeitas")
+    return "🕵️"
+  else if (category == "servicos")
+    return "🔧 "
+  else if (category == "acidentes")
+    return "🚨"
+  else if (category == "seguranca")
+    return "🤚"
+  else if (category == "condicoes")
+    return "🌧️"
+  return "😃"
+}
+
+function initMap(userCoords, alerts) {
     // The location of Uluru
     var user = {
         lat: userCoords[1],
@@ -21,17 +35,19 @@ function initMap(userCoords, alertCoords) {
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({
         position: user,
-        map: map
+        map: map,
+        title: "Sua posição",
     });
 
-    alertCoords.forEach(alert => {
-        console.log(alert)
+    alerts.forEach(alert => {
         new google.maps.Marker({
             position: {
-                lat: alert[1],
-                lng: alert[0]
+                lat: alert.location.coordinates[1],
+                lng: alert.location.coordinates[0]
             },
-            map: map
+            map: map,
+            label: getEmoji(alert.category),
+            title: alert.postText
         });
     });
 }
